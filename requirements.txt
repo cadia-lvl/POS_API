@@ -1,0 +1,4 @@
+git+https://github.com/cadia-lvl/POS.git@v2.0.4
+tokenizer
+fastapi
+uvicorn
