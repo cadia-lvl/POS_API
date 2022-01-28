@@ -1,4 +1,4 @@
-git+https://github.com/cadia-lvl/POS.git@v2.0.4
+git+https://github.com/cadia-lvl/POS.git@v3.1.0
 tokenizer
 fastapi
 uvicorn

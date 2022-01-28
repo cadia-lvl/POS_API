@@ -2,9 +2,14 @@ from fastapi import FastAPI
 from fastapi.responses import Response, JSONResponse, HTMLResponse
 import pos
 from tokenizer import split_into_sentences
+from pydantic import BaseModel
 
 
 __version__ = 0.1
+
+class TaggerInput(BaseModel):
+    type: Optional[str] = "text"
+    content: str
 
 app = FastAPI()
 
@@ -24,7 +29,12 @@ def home() -> str:
 """.format(__version__)
 
 @app.post('/tagger')
-def api_tagger(text : str) -> str:
+def api_tagger(request : str) -> str:
+    return api_tagger_impl(request.content)
+
+
+@app.post('/tagger/impl')
+def api_tagger_impl(text : str) -> str:
     sentences = [sentence.split() for sentence in split_into_sentences(text)]
     tags = tagger.tag_bulk(sentences, batch_size=2)
     out = []
@@ -34,3 +44,8 @@ def api_tagger(text : str) -> str:
             s.append([a,b])
         out.append(s)
     return JSONResponse(content=out)
+
+
+#@app.post('/lemmitizer')
+#def api_tagger(text : str) -> str:
+#    return ""
