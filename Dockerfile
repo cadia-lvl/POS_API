@@ -9,12 +9,10 @@ COPY requirements.txt /usr/src/app/
 RUN cd /usr/src/app \
  && pip install --upgrade pip \
  && pip install -r requirements.txt
+RUN pip install wandb
 
 WORKDIR /usr/src/app
 
-RUN wget https://repository.clarin.is/repository/xmlui/bitstream/handle/20.500.12537/98/tagger-v2.0.0.pt
-#COPY tagger-v2.0.0.pt .
-COPY ./example.txt .
 COPY main.py .
 
 EXPOSE 8080
