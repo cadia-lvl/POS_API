@@ -13,6 +13,9 @@ RUN pip install wandb
 
 WORKDIR /usr/src/app
 
+COPY models.py .
+RUN python3 models.py
+
 COPY main.py .
 
 EXPOSE 8080
