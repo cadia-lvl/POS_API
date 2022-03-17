@@ -35,9 +35,15 @@ def home() -> str:
 
 @app.post('/tagger')
 def api_tagger(request : TaggerInput) -> str:
-	text = request.content
-	sentences = [sentence.split() for sentence in split_into_sentences(text)]
-	tags = tagger_model.tag_bulk(sentences, batch_size=2)
+	try:
+			text = request.content
+			sentences = [sentence.split() for sentence in split_into_sentences(text)]
+	except:
+		return error({"code":"pos.bad.input", "text":"Bad input", "detail":{'traceback':traceback.format_exc()}})
+	try:
+		tags = tagger_model.tag_bulk(sentences, batch_size=2)
+	except:
+		return error({"code":"pos.model.error", "text":"model was unable to tag input", "detail":{'traceback':traceback.format_exc()}})
 	resp = []
 	for sentence, tag in zip(sentences, tags):
 		sent = []

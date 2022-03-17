@@ -3,20 +3,47 @@ import requests
 import json
 
 LOC="/tagger"
-#LOC="/process/service"
+LOC="/process/service"
 
-r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content": "Þetta er setning. Og önnur!"})
-
+inp =  "Þetta er setning. Og önnur!"
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content":inp})
 print("OUT:",r.content.decode("utf-8"))
 json.loads(r.content.decode("utf-8"))
+print()
 
-
-
-r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content": "Hvað heitir þú? Ég heiti Jón."}) 
+inp = "Hvað heitir þú? Ég heiti Jón."
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content": inp}) 
 print("OUT:",r.content.decode("utf-8"))
 json.loads(r.content.decode("utf-8"))
+print()
 
-
-r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content": "Ásgeir, Jón og María fóru í göngutúr."}) 
+inp = "Ásgeir, Jón og María fóru í göngutúr."
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content": inp}) 
 print("OUT:",r.content.decode("utf-8"))
 json.loads(r.content.decode("utf-8"))
+print()
+
+print("############ Error ############")
+inp = ""
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content": inp}) 
+print("OUT:",r.content.decode("utf-8"))
+json.loads(r.content.decode("utf-8"))
+print()
+
+inp = {}
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json=inp) 
+print("OUT:",r.content.decode("utf-8"))
+json.loads(r.content.decode("utf-8"))
+print()
+
+inp = {"type":"text"}
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json=inp) 
+print("OUT:",r.content.decode("utf-8"))
+json.loads(r.content.decode("utf-8"))
+print()
