@@ -3,7 +3,7 @@ import requests
 import json
 
 LOC="/tagger"
-LOC="/process/service"
+#LOC="/process/service"
 
 inp =  "Þetta er setning. Og önnur!"
 print("INP:",inp)
