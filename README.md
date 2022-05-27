@@ -14,7 +14,12 @@ Further details about the api calls are automatically generated when the contain
 
 | HTTP METHOD | Description |
 | ----------- | --------------- |
-| /tagger | Takes in an article in icelandic and then returns the article summary |
+| /tagger | Takes in icelandic text and returns that text along with pos tags for each token in that text |
+
+# Testing
+test files can be found in `tests/`. There are two tests that can be performed.
+1. Normal api tests: this is where you test the api from the running docker image
+2. ELG api tests: this is where you run `docker-compose up` and get an instance as if you where running the docker container on ELG. To submit a api call you then need to call `/process/service`.
 
 # Acknowledgements
 [Reykjavik University](https://lvl.ru.is)
