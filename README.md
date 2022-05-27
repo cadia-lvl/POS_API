@@ -13,12 +13,7 @@ Further details about the api calls are automatically generated when the contain
 | ----------- | --------------- |
 | /tagger | Takes in an article in icelandic and then returns the article summary |
 
-# Author
-
-[Reykjavik University](https://lvl.ru.is)
-
-Jökull Snær Gylfason
-
 # Acknowledgements
+[Reykjavik University](https://lvl.ru.is)
 
 This ELG API was developed in EU's CEF project: [Microservices at your service](https://www.lingsoft.fi/en/microservices-at-your-service-bridging-gap-between-nlp-research-and-industry)
