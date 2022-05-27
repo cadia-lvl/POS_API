@@ -3,7 +3,10 @@ This is an API for [icesum](https://github.com/cadia-lvl/POS) using the [ELG spe
 The API is wrapped in a [docker container](https://www.docker.com/) and is implemented using [fastapi](https://github.com/tiangolo/fastapi).
 
 # Getting started
-Running ./run.sh will build and run the docker container
+```bash
+make build
+make run
+```
 
 # API calls
 All the API calls use post and input/outputs are in a json format.

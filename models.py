@@ -1,4 +1,4 @@
-
+import pos
 import torch
 
 device = torch.device("cpu")  # CPU
