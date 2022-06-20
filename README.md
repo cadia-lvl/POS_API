@@ -1,5 +1,5 @@
 # POS API
-This is an API for [icesum](https://github.com/cadia-lvl/POS) using the [ELG specification](https://european-language-grid.readthedocs.io/en/stable/all/A3_API/LTInternalAPI.html#basic-api-pattern).
+This is an API for [POS](https://github.com/cadia-lvl/POS) using the [ELG specification](https://european-language-grid.readthedocs.io/en/stable/all/A3_API/LTInternalAPI.html#basic-api-pattern).
 The API is wrapped in a [docker container](https://www.docker.com/) and is implemented using [fastapi](https://github.com/tiangolo/fastapi).
 
 # Getting started
@@ -25,3 +25,6 @@ test files can be found in `tests/`. There are two tests that can be performed.
 [Reykjavik University](https://lvl.ru.is)
 
 This ELG API was developed in EU's CEF project: [Microservices at your service](https://www.lingsoft.fi/en/microservices-at-your-service-bridging-gap-between-nlp-research-and-industry)
+
+# Underlying tool
+The underlying tool is [POS](https://github.com/cadia-lvl/POS) by [Haukur Páll Jónsson](https://github.com/HaukurPall), Örvar Kárason and Steinþór Steingrímsson](https://github.com/steinst), which is licensed under this [Apache License 2.0](https://github.com/cadia-lvl/POS/blob/master/LICENSE). [POS](https://github.com/cadia-lvl/POS) is pip installed from a GitHub repository when the POS_API docker image is built. The [Tokenizer](https://github.com/mideind/Tokenizer) PyPi package is pip installed when the POS_API docker image is built. 
